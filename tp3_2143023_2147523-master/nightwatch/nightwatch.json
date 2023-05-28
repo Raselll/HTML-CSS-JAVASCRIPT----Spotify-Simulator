@@ -1,0 +1,37 @@
+{
+  "src_folders": [
+    "tests/e2e"
+  ],
+  "output_folder": "./tests/reports",
+  "custom_commands_path": [
+    "./tests/commands"
+  ],
+  "webdriver": {
+    "start_process": true,
+    "server_path": "node_modules/chromedriver/lib/chromedriver/chromedriver",
+    "port": 9515
+  },
+  "test_settings": {
+    "default": {
+      "launch_url": "http://localhost:5001",
+      "desiredCapabilities": {
+        "browserName": "chrome",
+        "javascriptEnabled": true
+      },
+      "globals": {
+        "waitForConditionTimeout": 500,
+        "retryAssertionTimeout": 500
+      },
+      "filter": "./tests/e2e/index.js",
+      "exclude": [
+        "./tests/e2e/utils.js",
+        "./tests/e2e/shared.js",
+        "./tests/commands/*.js"
+      ]
+    }
+  },
+  "test_workers": {
+    "enabled": true,
+    "workers": "auto"
+  }
+}
